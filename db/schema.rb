@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_21_233512) do
+ActiveRecord::Schema.define(version: 2023_02_23_202744) do
+
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+    t.string "species"
+    t.string "breed"
+    t.string "size"
+    t.date "birthdate"
+    t.integer "user_id"
+    t.string "image_url"
+    t.index ["user_id"], name: "index_pets_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -20,4 +32,5 @@ ActiveRecord::Schema.define(version: 2023_02_21_233512) do
     t.string "email"
   end
 
+  add_foreign_key "pets", "users"
 end
