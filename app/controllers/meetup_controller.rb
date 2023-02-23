@@ -1,0 +1,3 @@
+class MeetupController < ApplicationController
+
+end
