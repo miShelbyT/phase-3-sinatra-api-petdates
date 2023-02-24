@@ -14,4 +14,12 @@ Pet.create(name: "Luca", gender: "male", species: "dog", breed: "Goldendoodle", 
 
 Pet.create(name: "Heidi", gender: "female", species: "dog", breed: "Biiiig", size: "XXL", birthdate: Date.new(2019, 12, 25), image_url:  "https://res.cloudinary.com/doo2pim0u/image/upload/v1677107140/pet_dates/Heidi.jpg", user_id: User.second.id)
 
+# Meetup.create(time: )
+# Meetup.create()
+# Meetup.create()
+
+# PetMeet.create(pet_id: Pet.first.id)
+# PetMeet.create()
+# PetMeet.create()
+
 puts "✅ Done seeding!"

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_23_202744) do
+ActiveRecord::Schema.define(version: 2023_02_24_005025) do
+
+  create_table "meetups", force: :cascade do |t|
+    t.datetime "time"
+    t.string "location"
+  end
+
+  create_table "pet_meets", force: :cascade do |t|
+    t.integer "pet_id"
+    t.integer "meetup_id"
+    t.index ["meetup_id"], name: "index_pet_meets_on_meetup_id"
+    t.index ["pet_id"], name: "index_pet_meets_on_pet_id"
+  end
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
@@ -32,5 +44,7 @@ ActiveRecord::Schema.define(version: 2023_02_23_202744) do
     t.string "email"
   end
 
+  add_foreign_key "pet_meets", "meetups"
+  add_foreign_key "pet_meets", "pets"
   add_foreign_key "pets", "users"
 end
